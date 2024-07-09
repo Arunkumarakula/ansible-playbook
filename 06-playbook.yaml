@@ -1,0 +1,14 @@
+#creating playbook with using prompt
+- name: variable from prompt
+  hosts: localhost
+  vars_prompt:
+  - name: USERNAME
+    prompt: pls enter ur username
+    private: false
+  - name: PASSWORD
+    prompt: pls enter ur password
+    private: true
+  task:
+   - name: printing variables
+     ansible.builtin.debug:
+      msg: "username {{USERNAME}}, password {{PASSWORD}}"
