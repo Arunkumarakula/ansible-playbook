@@ -6,9 +6,9 @@
    TRAINER: Arun
    DURATION: 30HRS
   tasks:
-   - name: print helloworld
-     ansible.builtin.debug:
-      msg: "hello iam akula"
-   - name: print in variables
-     ansible.biiltin,debug:
-      msg: "hello iam akula {{COURSE}}, trainer is {{TRAINER}}, duration is {{DURATION}}"
+  - name: print helloworld
+    ansible.builtin.debug:
+     msg: "hello iam akula"
+  - name: print in variables
+    ansible.biiltin,debug:
+     msg: "hello iam akula {{COURSE}}, trainer is {{TRAINER}}, duration is {{DURATION}}"
