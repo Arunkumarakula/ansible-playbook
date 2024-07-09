@@ -2,9 +2,9 @@
 - name: variables in ansible
   hosts: mongodb
   vars:
-  COURSE: devops
-  TRAINER: Arun
-  DURATION: 30HRS
+   COURSE: devops
+   TRAINER: Arun
+   DURATION: 30HRS
   tasks:
    - name: print helloworld
      ansible.builtin.debug:
