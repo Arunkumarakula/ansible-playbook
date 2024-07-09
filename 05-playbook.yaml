@@ -1,7 +1,8 @@
+#storing varaible in seperate file
 - name: variables from files
   hosts: localhost
   vars_files:
-  -variables.yaml
+  -variable.yaml
   tasks:
    - name: printing the variables
      ansible.builtin.debug:
