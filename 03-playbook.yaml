@@ -1,0 +1,7 @@
+#printing message by using playbook
+- name: varaible in ansible
+  hosts: mongodb
+  tasks:
+  - name: print hello
+    ansible.builtin.debug:
+     msg: "Hello,This is Akula"
