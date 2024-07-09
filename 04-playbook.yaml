@@ -8,7 +8,7 @@
   tasks:
   - name: print helloworld
     ansible.builtin.debug:
-     msg: "hello iam akula"
+     msg: "hello iam learning devops"
   - name: print in variables
     ansible.builtin.debug:
-     msg: "hello iam akula {{COURSE}}, trainer is {{TRAINER}}, duration is {{DURATION}}"
+     msg: "hello iam learning {{COURSE}}, trainer is {{TRAINER}}, duration is {{DURATION}}"
