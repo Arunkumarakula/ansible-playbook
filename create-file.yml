@@ -1,0 +1,9 @@
+---
+- name: Create a file with content
+  hosts: all
+  become: true
+  tasks:
+    - name: Create file with some text
+      copy:
+        content: "This file was created using Ansible"
+        dest: /home/ubuntu/myfile.txt

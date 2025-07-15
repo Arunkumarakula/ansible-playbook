@@ -1,0 +1,21 @@
+---
+- name: Install git and clone the code
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install git
+      package:
+        name: git
+        state: present
+
+    - name: Remove existing app directory
+      file:
+        path: /var/www/html
+        state: absent
+
+    - name: Clone the code
+      git:
+        repo: https://github.com/Arunkumarakula/Food-app.git
+        dest: /var/www/html
+

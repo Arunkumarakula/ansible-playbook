@@ -1,0 +1,27 @@
+---
+
+- name: Remove Nginx, Git, and App Directory
+  hosts: all
+  become: true
+  tasks:
+    - name: Stop Nginx service if running
+      service:
+        name: nginx
+        state: stopped
+
+    - name: Remove Nginx package
+      package:
+        name: nginx
+        state: absent
+
+    - name: Remove Git package
+      package:
+        name: git
+        state: absent
+
+    - name: Remove the app directory
+      file:
+        path: /var/www/html
+        state: absent
+
+

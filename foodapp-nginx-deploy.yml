@@ -1,0 +1,26 @@
+---
+
+- name: Install Nginx and Clone App
+  hosts: all
+  become: true
+  tasks:
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: Install Git
+      package:
+        name: git
+        state: present
+
+    - name: Remove existing app directory
+      file:
+        path: /var/www/html
+        state: absent
+
+    - name: Clone the code
+      git:
+        repo: https://github.com/username/myapp.git
+        dest: /var/www/html
+
