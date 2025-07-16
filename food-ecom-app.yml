@@ -1,16 +1,19 @@
 ---
-
 - name: Install apache2, clone, deploy food-app
   hosts: food_app
   become: true
 
   tasks:
+    - name: Stop and disable Nginx
+      service:
+        name: nginx
+        state: stopped
+        enabled: false
+
     - name: Update apt cache
       apt:
         update_cache: yes
 
-
-  tasks:
     - name: Install apache2
       package:
         name: apache2
@@ -32,20 +35,25 @@
         dest: /var/www/html
 
     - name: Ensure apache2 is running
-      service: 
+      service:
         name: apache2
         state: started
 
 - name: Install apache2, clone, deploy-ecom-app
   hosts: ecom_app
   become: true
-  
+
   tasks:
+    - name: Stop and disable Nginx
+      service:
+        name: nginx
+        state: stopped
+        enabled: false
+
     - name: Update apt cache
       apt:
         update_cache: yes
 
-  tasks:
     - name: Install apache2
       package:
         name: apache2
@@ -70,4 +78,3 @@
       service:
         name: apache2
         state: started
- 
